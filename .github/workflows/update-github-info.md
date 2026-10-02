@@ -1,7 +1,7 @@
 ---
 name: update-github-info
 description: Keep the GitHub Info website current with practical, sourced updates from the GitHub Blog and Changelog.
-model: gpt-5-mini
+model: copilot/auto
 on:
   schedule: daily
   workflow_dispatch:
