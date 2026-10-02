@@ -2,6 +2,9 @@
 name: update-github-info
 description: Keep the GitHub Info website current with practical, sourced updates from the GitHub Blog and Changelog.
 model: gpt-4.1
+engine:
+  id: copilot
+  version: "1.0.90"
 on:
   schedule: daily
   workflow_dispatch:
