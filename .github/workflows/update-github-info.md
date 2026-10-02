@@ -30,7 +30,9 @@ safe-outputs:
 
 Read `notes/mona-notes.md` and `site/content/github-info.md` first. Use Mona's editorial guidance when deciding what is useful for developers.
 
-Use the built-in `web-fetch` tool to fetch each page directly: https://github.blog/latest/, https://github.blog/changelog/, and https://awesome-copilot.github.com/workflows/. Do not use shell commands such as `curl` or `wget` to fetch these pages, and do not save fetched content under `/tmp` or elsewhere. Review the fetched content in context for verified, practical information that helps developers learn GitHub faster. Use `web-fetch` for relevant links on github.com when needed to confirm details.
+Call the enabled built-in tool named `web_fetch` (underscore; this is a tool, not a skill) once for each source, passing its full URL in the `url` argument: `https://github.blog/latest/`, `https://github.blog/changelog/`, and `https://awesome-copilot.github.com/workflows/`. Read the returned content directly. Do not invoke `skill(web-fetch)`, use GitHub `get_file_contents`, use shell commands such as `curl` or `wget`, or save fetched pages to files. Use `web_fetch` for relevant links when needed to confirm details.
+
+If any required `web_fetch` call fails, report the failed URL and actual tool error with `report_incomplete`. Do not describe a fetch failure as a filesystem permission issue or as a lack of new information.
 
 Update only `site/content/github-info.md`. Keep the content concise, preserve its existing structure and themes, and include the source URL whenever an update is based on the GitHub Blog, Changelog, or Awesome Copilot workflows. Do not invent details or repeat items that are already covered. If there is no meaningful new information to add, leave the file unchanged and do not create an empty pull request.
 
